@@ -1,0 +1,26 @@
+{
+  "display": {
+    "background": "minecraft:textures/blocks/stone.png",
+    "icon": {
+      "item": "ninja_mod:ninjaarmorhelmet"
+    },
+    "title": {
+      "translate": "advancements.ninjatime.title"
+    },
+    "description": {
+      "translate": "advancements.ninjatime.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "ninjatime": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 10
+  }
+}

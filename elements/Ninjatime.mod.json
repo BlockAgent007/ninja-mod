@@ -1,0 +1,24 @@
+{
+  "_fv": 5,
+  "_type": "achievement",
+  "definition": {
+    "achievementName": "Ninja training - 1st steps",
+    "achievementDescription": "Get your ninja outfit and unlock skills.",
+    "achievementIcon": {
+      "value": "CUSTOM:NinjaArmor.helmet"
+    },
+    "background": "Default",
+    "disableDisplay": false,
+    "showPopup": true,
+    "announceToChat": false,
+    "hideIfNotCompleted": true,
+    "rewardLoot": [],
+    "rewardFunction": "No function",
+    "rewardXP": 10,
+    "achievementType": "task",
+    "parent": {
+      "value": "No parent: root"
+    },
+    "triggerxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"custom_trigger\" x=\"34\" y=\"44\"><next><block type=\"advancement_trigger\" deletable=\"false\"/></next></block></xml>"
+  }
+}
