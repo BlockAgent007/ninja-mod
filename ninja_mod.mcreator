@@ -18,38 +18,6 @@
       }
     },
     {
-      "name": "NinjaArmorHelmetRecipe",
-      "type": "recipe",
-      "sortid": 2,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {}
-    },
-    {
-      "name": "NinjaArmorBodyRecipe",
-      "type": "recipe",
-      "sortid": 3,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {}
-    },
-    {
-      "name": "NinjaArmorLeggingsRecipe",
-      "type": "recipe",
-      "sortid": 4,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {}
-    },
-    {
-      "name": "NinjaArmorBootsRecipe",
-      "type": "recipe",
-      "sortid": 5,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {}
-    },
-    {
       "name": "Ninjatime",
       "type": "achievement",
       "sortid": 6,
@@ -89,7 +57,16 @@
       "locked_code": false,
       "ids": {},
       "metadata": {
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       }
     },
     {
@@ -110,6 +87,74 @@
       "compiles": true,
       "locked_code": false,
       "ids": {}
+    },
+    {
+      "name": "NPCremoverRightClickedInAir",
+      "type": "procedure",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "int"
+          },
+          {
+            "name": "y",
+            "type": "int"
+          },
+          {
+            "name": "z",
+            "type": "int"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Lantern1",
+      "type": "block",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "Lantern1Recipe",
+      "type": "recipe",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "Dojo",
+      "type": "structure",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "Katana",
+      "type": "tool",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "NinjaTraining2",
+      "type": "achievement",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
     }
   ],
   "variable_elements": [],
@@ -121,9 +166,13 @@
       "item.npcremover.name": "NPC remover",
       "item.ninjaarmorbody.name": "Ninja Coat",
       "entity.senseinpc.name": "Sensei NPC",
-      "item.ninjaarmorboots.name": "Ninja Boots",
+      "tile.lantern1.name": "Red lantern",
+      "advancements.ninjatraining2.descr": "Get a sword for the training",
       "item.ninjaarmorhelmet.name": "Ninja Mask",
+      "advancements.ninjatraining2.title": "Ninja Training - 2nd assignment",
       "advancements.ninjatime.descr": "Get your ninja outfit and unlock skills.",
+      "item.katana.name": "Katana",
+      "item.ninjaarmorboots.name": "Ninja Boots",
       "advancements.ninjaquest.descr": "A quest to become a ninja.",
       "item.ninjaarmorlegs.name": "Ninja Leggings"
     }

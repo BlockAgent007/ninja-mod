@@ -1,6 +1,5 @@
 {
   "display": {
-    "background": "minecraft:textures/blocks/stone.png",
     "icon": {
       "item": "ninja_mod:ninjaarmorhelmet"
     },
@@ -22,5 +21,6 @@
   },
   "rewards": {
     "experience": 10
-  }
+  },
+  "parent": "ninja_mod:ninjaquest"
 }

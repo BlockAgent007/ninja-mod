@@ -6,40 +6,40 @@
     "recipeRetstackSize": 1,
     "recipeShapeless": false,
     "recipeReturnStack": {
-      "value": "CUSTOM:NinjaArmor.boots"
+      "value": "CUSTOM:Lantern1"
     },
     "recipeSlots": [
       {
-        "value": ""
+        "value": "Items.DYE#1"
       },
       {
-        "value": ""
+        "value": "Items.PAPER"
       },
       {
-        "value": ""
+        "value": "Items.DYE#1"
       },
       {
-        "value": "Items.LEATHER"
+        "value": "Items.PAPER"
       },
       {
-        "value": ""
+        "value": "Blocks.TORCH"
       },
       {
-        "value": "Items.LEATHER"
+        "value": "Items.PAPER"
       },
       {
-        "value": "Blocks.WOOL#0"
+        "value": "Items.DYE#1"
       },
       {
-        "value": ""
+        "value": "Items.PAPER"
       },
       {
-        "value": "Blocks.WOOL#0"
+        "value": "Items.DYE#1"
       }
     ],
     "smeltingXPReward": 0.0,
     "smeltingRetstackSize": 1,
-    "name": "ninjaarmorbootsrecipe",
+    "name": "lantern1recipe",
     "namespace": "mod"
   }
 }

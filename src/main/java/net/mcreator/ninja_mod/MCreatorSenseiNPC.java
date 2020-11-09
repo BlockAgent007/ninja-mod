@@ -13,6 +13,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.DamageSource;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
+import net.minecraft.init.Blocks;
 import net.minecraft.entity.projectile.EntityPotion;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -41,7 +42,7 @@ public class MCreatorSenseiNPC extends Elementsninja_mod.ModElement {
 	@Override
 	public void initElements() {
 		elements.entities.add(() -> EntityEntryBuilder.create().entity(EntityCustom.class)
-				.id(new ResourceLocation("ninja_mod", "senseinpc"), ENTITYID).name("senseinpc").tracker(0, 1, true).egg(-2302756, -5009521).build());
+				.id(new ResourceLocation("ninja_mod", "senseinpc"), ENTITYID).name("senseinpc").tracker(64, 1, true).egg(-2302756, -5009521).build());
 	}
 
 	private Biome[] allbiomes(net.minecraft.util.registry.RegistryNamespaced<ResourceLocation, Biome> in) {
@@ -58,7 +59,7 @@ public class MCreatorSenseiNPC extends Elementsninja_mod.ModElement {
 		RenderingRegistry.registerEntityRenderingHandler(EntityCustom.class, renderManager -> {
 			RenderBiped customRender = new RenderBiped(renderManager, new ModelBiped(), 0.5f) {
 				protected ResourceLocation getEntityTexture(Entity entity) {
-					return new ResourceLocation("ninja_mod:textures/skin-41d8ef3ff203b68c1198adc6983088ae75f50940e87aaf84539f1acf7b079d16.png");
+					return new ResourceLocation("ninja_mod:textures/sensei_npc.png");
 				}
 			};
 			customRender.addLayer(new net.minecraft.client.renderer.entity.layers.LayerBipedArmor(customRender) {
@@ -77,7 +78,7 @@ public class MCreatorSenseiNPC extends Elementsninja_mod.ModElement {
 			setSize(0.6f, 1.8f);
 			experienceValue = 0;
 			this.isImmuneToFire = true;
-			setNoAI(!true);
+			setNoAI(!false);
 			setCustomNameTag("Sensei");
 			setAlwaysRenderNameTag(true);
 			enablePersistence();
@@ -98,7 +99,7 @@ public class MCreatorSenseiNPC extends Elementsninja_mod.ModElement {
 
 		@Override
 		protected Item getDropItem() {
-			return null;
+			return new ItemStack(Blocks.AIR, (int) (1)).getItem();
 		}
 
 		@Override
@@ -149,6 +150,8 @@ public class MCreatorSenseiNPC extends Elementsninja_mod.ModElement {
 			ItemStack itemstack = entity.getHeldItem(hand);
 			{
 				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("world", world);
 				MCreatorSenseiNPCRightClickedOnEntity.executeProcedure($_dependencies);
 			}
 			return true;

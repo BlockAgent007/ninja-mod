@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "ninja_mod:blocks/red_lantern_bottom",
+    "up": "ninja_mod:blocks/red_lantern_top",
+    "north": "ninja_mod:blocks/red_lantern_side",
+    "east": "ninja_mod:blocks/red_lantern_side",
+    "south": "ninja_mod:blocks/red_lantern_side",
+    "west": "ninja_mod:blocks/red_lantern_side",
+    "particle": "ninja_mod:blocks/red_lantern_bottom"
+  }
+}

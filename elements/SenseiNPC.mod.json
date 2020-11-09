@@ -4,7 +4,7 @@
   "definition": {
     "mobName": "Sensei NPC",
     "mobLabel": "Sensei",
-    "mobModelTexture": "skin-41d8ef3ff203b68c1198adc6983088ae75f50940e87aaf84539f1acf7b079d16.png",
+    "mobModelTexture": "sensei_npc.png",
     "mobModelName": "Biped",
     "modelWidth": 0.6,
     "modelHeight": 1.8,
@@ -47,7 +47,7 @@
     "mobCreatureType": "UNDEFINED",
     "attackStrength": 0,
     "movementSpeed": 0.0,
-    "trackingRange": 0,
+    "trackingRange": 64,
     "health": 9999,
     "xpAmount": 0,
     "waterMob": false,
@@ -65,7 +65,7 @@
     "immuneToPotions": true,
     "immuneToPlayer": true,
     "mobDrop": {
-      "value": ""
+      "value": "Blocks.AIR"
     },
     "livingSound": {
       "value": ""
@@ -87,7 +87,7 @@
     "onRightClickedOn": {
       "name": "SenseiNPCRightClickedOnEntity"
     },
-    "hasAI": true,
+    "hasAI": false,
     "aiBase": "(none)",
     "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"watch_closest_entity\"><field name=\"radius\">6</field><field name=\"entity\">EntityPlayer</field><next><block type=\"watch_closest_entity\"><field name=\"radius\">6</field><field name=\"entity\">EntityPlayerMP</field><next><block type=\"swim_in_water\"/></next></block></next></block></next></block></xml>",
     "breedable": false,

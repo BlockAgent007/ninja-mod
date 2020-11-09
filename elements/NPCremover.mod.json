@@ -21,6 +21,9 @@
     "specialInfo": [
       "Kills NPCs on right click."
     ],
-    "hasGlow": false
+    "hasGlow": false,
+    "onRightClickedInAir": {
+      "name": "NPCremoverRightClickedInAir"
+    }
   }
 }
