@@ -3,7 +3,7 @@
   "_type": "achievement",
   "definition": {
     "achievementName": "Ninja training - 1st steps",
-    "achievementDescription": "Get your ninja outfit and unlock skills.",
+    "achievementDescription": "Get your ninja outfit.",
     "achievementIcon": {
       "value": "CUSTOM:NinjaArmor.helmet"
     },

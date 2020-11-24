@@ -79,6 +79,51 @@ public class MCreatorSenseiNPCRightClickedOnEntity extends Elementsninja_mod.Mod
 				}
 			}
 		} else if (((entity.getEntityData().getDouble("timesTalked")) == 4)) {
+			if ((((entity instanceof EntityPlayerMP) && (entity.world instanceof WorldServer)) ? ((EntityPlayerMP) entity).getAdvancements()
+					.getProgress(((WorldServer) entity.world).getAdvancementManager().getAdvancement(new ResourceLocation("ninja_mod:ninjatime")))
+					.isDone() : false)) {
+				if ((!(((entity instanceof EntityPlayerMP) && (entity.world instanceof WorldServer))
+						? ((EntityPlayerMP) entity)
+								.getAdvancements()
+								.getProgress(
+										((WorldServer) entity.world).getAdvancementManager().getAdvancement(
+												new ResourceLocation("ninja_mod:ninjatraining2"))).isDone()
+						: false))) {
+					if (entity instanceof EntityPlayer && !world.isRemote) {
+						((EntityPlayer) entity).sendStatusMessage(new TextComponentString(
+								"[Sensei]: You're back? Excellent. Now bring me a sword made of iron for your next piece of gear."), (false));
+					}
+					entity.getEntityData().setDouble("timesTalked", 5);
+				}
+			} else {
+				if (entity instanceof EntityPlayer && !world.isRemote) {
+					((EntityPlayer) entity).sendStatusMessage(new TextComponentString("[Sensei]: Bring me the entire leather armor set."), (false));
+				}
+			}
+		} else if (((entity.getEntityData().getDouble("timesTalked")) == 5)) {
+			if (((((entity instanceof EntityPlayerMP) && (entity.world instanceof WorldServer)) ? ((EntityPlayerMP) entity).getAdvancements()
+					.getProgress(((WorldServer) entity.world).getAdvancementManager().getAdvancement(new ResourceLocation("ninja_mod:ninjatime")))
+					.isDone() : false) && (!(((entity instanceof EntityPlayerMP) && (entity.world instanceof WorldServer))
+					? ((EntityPlayerMP) entity)
+							.getAdvancements()
+							.getProgress(
+									((WorldServer) entity.world).getAdvancementManager().getAdvancement(
+											new ResourceLocation("ninja_mod:ninjatraining2"))).isDone()
+					: false)))) {
+				if (entity instanceof EntityPlayer && !world.isRemote) {
+					((EntityPlayer) entity).sendStatusMessage(new TextComponentString("[Sensei]: Bring me an iron sword."), (false));
+				}
+			} else if ((((entity instanceof EntityPlayerMP) && (entity.world instanceof WorldServer)) ? ((EntityPlayerMP) entity).getAdvancements()
+					.getProgress(((WorldServer) entity.world).getAdvancementManager().getAdvancement(new ResourceLocation("ninja_mod:ninjatime")))
+					.isDone() : false)) {
+				if (entity instanceof EntityPlayer && !world.isRemote) {
+					((EntityPlayer) entity).sendStatusMessage(new TextComponentString("[Sensei]:"), (false));
+				}
+			}
+		}
+		if ((((entity instanceof EntityPlayerMP) && (entity.world instanceof WorldServer)) ? ((EntityPlayerMP) entity).getAdvancements()
+				.getProgress(((WorldServer) entity.world).getAdvancementManager().getAdvancement(new ResourceLocation("ninja_mod:ninjaquest")))
+				.isDone() : false)) {
 			if ((((new ItemStack(Items.LEATHER_HELMET, (int) (1)).getItem() == ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity)
 					.getHeldItemMainhand() : ItemStack.EMPTY).getItem()) || (new ItemStack(Items.LEATHER_CHESTPLATE, (int) (1)).getItem() == ((entity instanceof EntityLivingBase)
 					? ((EntityLivingBase) entity).getHeldItemMainhand()
@@ -122,40 +167,20 @@ public class MCreatorSenseiNPCRightClickedOnEntity extends Elementsninja_mod.Mod
 					if (entity instanceof EntityPlayer)
 						ItemHandlerHelper.giveItemToPlayer(((EntityPlayer) entity), new ItemStack(MCreatorNinjaArmor.boots, (int) (1)));
 				}
-			} else {
-				if (entity instanceof EntityPlayer && !world.isRemote) {
-					((EntityPlayer) entity).sendStatusMessage(new TextComponentString("[Sensei]: Bring me the entire leather armor set."), (false));
-				}
 			}
-			if ((((entity instanceof EntityPlayerMP) && (entity.world instanceof WorldServer)) ? ((EntityPlayerMP) entity).getAdvancements()
-					.getProgress(((WorldServer) entity.world).getAdvancementManager().getAdvancement(new ResourceLocation("ninja_mod:ninjatime")))
-					.isDone() : false)) {
-				if ((!(((entity instanceof EntityPlayerMP) && (entity.world instanceof WorldServer))
-						? ((EntityPlayerMP) entity)
-								.getAdvancements()
-								.getProgress(
-										((WorldServer) entity.world).getAdvancementManager().getAdvancement(
-												new ResourceLocation("ninja_mod:ninjatraining2"))).isDone()
-						: false))) {
-					if (entity instanceof EntityPlayer && !world.isRemote) {
-						((EntityPlayer) entity).sendStatusMessage(new TextComponentString(
-								"[Sensei]: You're back? Excellent. Now bring me a sword made of iron for your next piece of gear."), (false));
-					}
+		}
+		if ((((entity instanceof EntityPlayerMP) && (entity.world instanceof WorldServer)) ? ((EntityPlayerMP) entity).getAdvancements()
+				.getProgress(((WorldServer) entity.world).getAdvancementManager().getAdvancement(new ResourceLocation("ninja_mod:ninjatime")))
+				.isDone() : false)) {
+			if ((new ItemStack(Items.IRON_SWORD, (int) (1)).getItem() == ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity)
+					.getHeldItemMainhand() : ItemStack.EMPTY).getItem())) {
+				if (entity instanceof EntityPlayer && !world.isRemote) {
+					((EntityPlayer) entity).sendStatusMessage(new TextComponentString("[Sensei]: Here's your katana."), (false));
 				}
-				if ((new ItemStack(Items.IRON_SWORD, (int) (1)).getItem() == ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity)
-						.getHeldItemMainhand() : ItemStack.EMPTY).getItem())) {
-					if (entity instanceof EntityPlayer && !world.isRemote) {
-						((EntityPlayer) entity).sendStatusMessage(new TextComponentString("[Sensei]: Here's your katana."), (false));
-					}
-					if (entity instanceof EntityPlayer)
-						((EntityPlayer) entity).inventory.clearMatchingItems(new ItemStack(Items.IRON_SWORD, (int) (1)).getItem(), -1, (int) 1, null);
-					if (entity instanceof EntityPlayer)
-						ItemHandlerHelper.giveItemToPlayer(((EntityPlayer) entity), new ItemStack(MCreatorKatana.block, (int) (1)));
-				} else {
-					if (entity instanceof EntityPlayer && !world.isRemote) {
-						((EntityPlayer) entity).sendStatusMessage(new TextComponentString("[Sensei]: Bring me an iron sword."), (false));
-					}
-				}
+				if (entity instanceof EntityPlayer)
+					((EntityPlayer) entity).inventory.clearMatchingItems(new ItemStack(Items.IRON_SWORD, (int) (1)).getItem(), -1, (int) 1, null);
+				if (entity instanceof EntityPlayer)
+					ItemHandlerHelper.giveItemToPlayer(((EntityPlayer) entity), new ItemStack(MCreatorKatana.block, (int) (1)));
 			}
 		}
 	}

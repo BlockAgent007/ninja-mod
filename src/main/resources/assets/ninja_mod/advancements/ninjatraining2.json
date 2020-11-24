@@ -16,18 +16,7 @@
   },
   "criteria": {
     "ninjatraining2": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "ninja_mod:katana",
-            "count": {
-              "min": 1,
-              "max": 9999
-            }
-          }
-        ]
-      }
+      "trigger": "minecraft:impossible"
     }
   },
   "rewards": {

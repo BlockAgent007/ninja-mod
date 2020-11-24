@@ -155,6 +155,22 @@
       "compiles": true,
       "locked_code": false,
       "ids": {}
+    },
+    {
+      "name": "NinjaTraining2Trigger",
+      "type": "procedure",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -170,7 +186,7 @@
       "advancements.ninjatraining2.descr": "Get a sword for the training",
       "item.ninjaarmorhelmet.name": "Ninja Mask",
       "advancements.ninjatraining2.title": "Ninja Training - 2nd assignment",
-      "advancements.ninjatime.descr": "Get your ninja outfit and unlock skills.",
+      "advancements.ninjatime.descr": "Get your ninja outfit.",
       "item.katana.name": "Katana",
       "item.ninjaarmorboots.name": "Ninja Boots",
       "advancements.ninjaquest.descr": "A quest to become a ninja.",
