@@ -4,6 +4,7 @@ import net.minecraft.world.gen.structure.template.Template;
 import net.minecraft.world.gen.structure.template.PlacementSettings;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.World;
 import net.minecraft.util.math.ChunkPos;
@@ -58,6 +59,26 @@ public class MCreatorDojo extends Elementsninja_mod.ModElement {
 				}
 			}
 			int j = height - 1;
+			boolean biomeCriteria = false;
+			Biome biome = world.getBiome(new BlockPos(i, j, k));
+			if (Biome.REGISTRY.getNameForObject(biome).equals(new ResourceLocation("plains")))
+				biomeCriteria = true;
+			if (Biome.REGISTRY.getNameForObject(biome).equals(new ResourceLocation("desert")))
+				biomeCriteria = true;
+			if (Biome.REGISTRY.getNameForObject(biome).equals(new ResourceLocation("extreme_hills")))
+				biomeCriteria = true;
+			if (Biome.REGISTRY.getNameForObject(biome).equals(new ResourceLocation("ice_flats")))
+				biomeCriteria = true;
+			if (Biome.REGISTRY.getNameForObject(biome).equals(new ResourceLocation("mushroom_island")))
+				biomeCriteria = true;
+			if (Biome.REGISTRY.getNameForObject(biome).equals(new ResourceLocation("taiga_cold")))
+				biomeCriteria = true;
+			if (Biome.REGISTRY.getNameForObject(biome).equals(new ResourceLocation("savanna")))
+				biomeCriteria = true;
+			if (Biome.REGISTRY.getNameForObject(biome).equals(new ResourceLocation("mesa")))
+				biomeCriteria = true;
+			if (!biomeCriteria)
+				return;
 			if (world.isRemote)
 				return;
 			Template template = ((WorldServer) world).getStructureTemplateManager().getTemplate(world.getMinecraftServer(),

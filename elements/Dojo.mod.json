@@ -12,6 +12,31 @@
       "Surface"
     ],
     "restrictionBlocks": [],
-    "restrictionBiomes": []
+    "restrictionBiomes": [
+      {
+        "value": "plains"
+      },
+      {
+        "value": "desert"
+      },
+      {
+        "value": "mountains"
+      },
+      {
+        "value": "snowy_tundra"
+      },
+      {
+        "value": "mushroom_fields"
+      },
+      {
+        "value": "taiga_cold"
+      },
+      {
+        "value": "savanna"
+      },
+      {
+        "value": "badlands"
+      }
+    ]
   }
 }

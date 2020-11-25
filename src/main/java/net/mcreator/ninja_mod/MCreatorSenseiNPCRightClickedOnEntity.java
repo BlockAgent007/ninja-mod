@@ -95,29 +95,41 @@ public class MCreatorSenseiNPCRightClickedOnEntity extends Elementsninja_mod.Mod
 					}
 					entity.getEntityData().setDouble("timesTalked", 5);
 				}
-			} else {
+			} else if ((!(((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem() == new ItemStack(
+					Items.LEATHER_HELMET, (int) (1)).getItem()) || (((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity)
+					.getHeldItemMainhand() : ItemStack.EMPTY).getItem() == new ItemStack(Items.LEATHER_CHESTPLATE, (int) (1)).getItem())) || ((((entity instanceof EntityLivingBase)
+					? ((EntityLivingBase) entity).getHeldItemMainhand()
+					: ItemStack.EMPTY).getItem() == new ItemStack(Items.LEATHER_LEGGINGS, (int) (1)).getItem()) || (((entity instanceof EntityLivingBase)
+					? ((EntityLivingBase) entity).getHeldItemMainhand()
+					: ItemStack.EMPTY).getItem() == new ItemStack(Items.LEATHER_BOOTS, (int) (1)).getItem()))))) {
 				if (entity instanceof EntityPlayer && !world.isRemote) {
 					((EntityPlayer) entity).sendStatusMessage(new TextComponentString("[Sensei]: Bring me the entire leather armor set."), (false));
 				}
 			}
 		} else if (((entity.getEntityData().getDouble("timesTalked")) == 5)) {
-			if (((((entity instanceof EntityPlayerMP) && (entity.world instanceof WorldServer)) ? ((EntityPlayerMP) entity).getAdvancements()
-					.getProgress(((WorldServer) entity.world).getAdvancementManager().getAdvancement(new ResourceLocation("ninja_mod:ninjatime")))
-					.isDone() : false) && (!(((entity instanceof EntityPlayerMP) && (entity.world instanceof WorldServer))
-					? ((EntityPlayerMP) entity)
-							.getAdvancements()
-							.getProgress(
-									((WorldServer) entity.world).getAdvancementManager().getAdvancement(
-											new ResourceLocation("ninja_mod:ninjatraining2"))).isDone()
-					: false)))) {
-				if (entity instanceof EntityPlayer && !world.isRemote) {
-					((EntityPlayer) entity).sendStatusMessage(new TextComponentString("[Sensei]: Bring me an iron sword."), (false));
-				}
-			} else if ((((entity instanceof EntityPlayerMP) && (entity.world instanceof WorldServer)) ? ((EntityPlayerMP) entity).getAdvancements()
+			if ((((entity instanceof EntityPlayerMP) && (entity.world instanceof WorldServer)) ? ((EntityPlayerMP) entity).getAdvancements()
 					.getProgress(((WorldServer) entity.world).getAdvancementManager().getAdvancement(new ResourceLocation("ninja_mod:ninjatime")))
 					.isDone() : false)) {
-				if (entity instanceof EntityPlayer && !world.isRemote) {
-					((EntityPlayer) entity).sendStatusMessage(new TextComponentString("[Sensei]:"), (false));
+				if (((!(((entity instanceof EntityPlayerMP) && (entity.world instanceof WorldServer))
+						? ((EntityPlayerMP) entity)
+								.getAdvancements()
+								.getProgress(
+										((WorldServer) entity.world).getAdvancementManager().getAdvancement(
+												new ResourceLocation("ninja_mod:ninjatraining2"))).isDone()
+						: false)) && (!(((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+						.getItem() == new ItemStack(Items.IRON_SWORD, (int) (1)).getItem())))) {
+					if (entity instanceof EntityPlayer && !world.isRemote) {
+						((EntityPlayer) entity).sendStatusMessage(new TextComponentString("[Sensei]: Bring me an iron sword."), (false));
+					}
+				} else {
+					if (entity instanceof EntityPlayer && !world.isRemote) {
+						((EntityPlayer) entity)
+								.sendStatusMessage(
+										new TextComponentString(
+												"[Sensei]: Alright. Now that you're ready and geared up, how about some actual training? I need you to collect 5 experience levels and report back to me, once you've done it."),
+										(false));
+					}
+					entity.getEntityData().setDouble("timesTalked", 6);
 				}
 			}
 		}
