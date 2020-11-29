@@ -12,8 +12,11 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.client.Minecraft;
 
 public class ninja_modVariables {
+	public static String UnlockStatus = "";
+
 	public static class MapVariables extends WorldSavedData {
 		public static final String DATA_NAME = "ninja_mod_mapvars";
+		public double Combo = 0;
 
 		public MapVariables() {
 			super(DATA_NAME);
@@ -25,10 +28,12 @@ public class ninja_modVariables {
 
 		@Override
 		public void readFromNBT(NBTTagCompound nbt) {
+			Combo = nbt.getDouble("Combo");
 		}
 
 		@Override
 		public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
+			nbt.setDouble("Combo", Combo);
 			return nbt;
 		}
 

@@ -132,6 +132,48 @@ public class MCreatorSenseiNPCRightClickedOnEntity extends Elementsninja_mod.Mod
 					entity.getEntityData().setDouble("timesTalked", 6);
 				}
 			}
+		} else if (((entity.getEntityData().getDouble("timesTalked")) == 6)) {
+			if ((((entity instanceof EntityPlayerMP) && (entity.world instanceof WorldServer)) ? ((EntityPlayerMP) entity)
+					.getAdvancements()
+					.getProgress(
+							((WorldServer) entity.world).getAdvancementManager().getAdvancement(new ResourceLocation("ninja_mod:ninjatraining2")))
+					.isDone() : false)) {
+				if (((!(((entity instanceof EntityPlayerMP) && (entity.world instanceof WorldServer))
+						? ((EntityPlayerMP) entity)
+								.getAdvancements()
+								.getProgress(
+										((WorldServer) entity.world).getAdvancementManager().getAdvancement(
+												new ResourceLocation("ninja_mod:ninjatraining3"))).isDone()
+						: false)) && (!(((entity instanceof EntityPlayer) ? ((EntityPlayer) entity).experienceLevel : 0) <= 5)))) {
+					if (entity instanceof EntityPlayer && !world.isRemote) {
+						((EntityPlayer) entity).sendStatusMessage(new TextComponentString("[Sensei]: Talk to me when you have at least 5xp levels."),
+								(false));
+					}
+				} else {
+					if (entity instanceof EntityPlayer)
+						((EntityPlayer) entity).addExperienceLevel((int) -5);
+					if (entity instanceof EntityPlayer && !world.isRemote) {
+						((EntityPlayer) entity)
+								.sendStatusMessage(
+										new TextComponentString(
+												"[Sensei]: I just unlocked you your very own skill tree. Open it by pressing B. Now you may collect combat, agility, stealth and crafting xp to spend it on skills. Talk to me again for me to explain combat skills."),
+										(false));
+					}
+					if (entity instanceof EntityPlayerMP) {
+						Advancement _adv = ((MinecraftServer) ((EntityPlayerMP) entity).mcServer).getAdvancementManager().getAdvancement(
+								new ResourceLocation("ninja_mod:ninjatraining3"));
+						AdvancementProgress _ap = ((EntityPlayerMP) entity).getAdvancements().getProgress(_adv);
+						if (!_ap.isDone()) {
+							Iterator _iterator = _ap.getRemaningCriteria().iterator();
+							while (_iterator.hasNext()) {
+								String _criterion = (String) _iterator.next();
+								((EntityPlayerMP) entity).getAdvancements().grantCriterion(_adv, _criterion);
+							}
+						}
+					}
+					entity.getEntityData().setDouble("timesTalked", 7);
+				}
+			}
 		}
 		if ((((entity instanceof EntityPlayerMP) && (entity.world instanceof WorldServer)) ? ((EntityPlayerMP) entity).getAdvancements()
 				.getProgress(((WorldServer) entity.world).getAdvancementManager().getAdvancement(new ResourceLocation("ninja_mod:ninjaquest")))

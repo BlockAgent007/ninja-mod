@@ -116,11 +116,31 @@ public class Elementsninja_mod implements IFuelHandler, IWorldGenerator {
 	public static class GuiHandler implements IGuiHandler {
 		@Override
 		public Object getServerGuiElement(int id, EntityPlayer player, World world, int x, int y, int z) {
+			if (id == MCreatorSkillTreeCombat.GUIID)
+				return new MCreatorSkillTreeCombat.GuiContainerMod(world, x, y, z, player);
+			if (id == MCreatorSkillTreeAgility.GUIID)
+				return new MCreatorSkillTreeAgility.GuiContainerMod(world, x, y, z, player);
+			if (id == MCreatorSkillTreeStealth.GUIID)
+				return new MCreatorSkillTreeStealth.GuiContainerMod(world, x, y, z, player);
+			if (id == MCreatorSkillTreeCrafting.GUIID)
+				return new MCreatorSkillTreeCrafting.GuiContainerMod(world, x, y, z, player);
+			if (id == MCreatorComboSkill.GUIID)
+				return new MCreatorComboSkill.GuiContainerMod(world, x, y, z, player);
 			return null;
 		}
 
 		@Override
 		public Object getClientGuiElement(int id, EntityPlayer player, World world, int x, int y, int z) {
+			if (id == MCreatorSkillTreeCombat.GUIID)
+				return new MCreatorSkillTreeCombat.GuiWindow(world, x, y, z, player);
+			if (id == MCreatorSkillTreeAgility.GUIID)
+				return new MCreatorSkillTreeAgility.GuiWindow(world, x, y, z, player);
+			if (id == MCreatorSkillTreeStealth.GUIID)
+				return new MCreatorSkillTreeStealth.GuiWindow(world, x, y, z, player);
+			if (id == MCreatorSkillTreeCrafting.GUIID)
+				return new MCreatorSkillTreeCrafting.GuiWindow(world, x, y, z, player);
+			if (id == MCreatorComboSkill.GUIID)
+				return new MCreatorComboSkill.GuiWindow(world, x, y, z, player);
 			return null;
 		}
 	}

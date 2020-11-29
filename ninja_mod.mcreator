@@ -1,5 +1,6 @@
 {
   "id_map": {
+    "GUI": 8,
     "ENTITY": 2
   },
   "mod_elements": [
@@ -171,9 +172,208 @@
           }
         ]
       }
+    },
+    {
+      "name": "SkillTreeCombat",
+      "type": "gui",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "0": 1
+      }
+    },
+    {
+      "name": "NinjaTraining3",
+      "type": "achievement",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "SkillTreeOnKeyPressed",
+      "type": "procedure",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "int"
+          },
+          {
+            "name": "y",
+            "type": "int"
+          },
+          {
+            "name": "z",
+            "type": "int"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SkillTree",
+      "type": "keybind",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "SkillTreeAgility",
+      "type": "gui",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "0": 5
+      }
+    },
+    {
+      "name": "SkillTreeStealth",
+      "type": "gui",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "0": 6
+      }
+    },
+    {
+      "name": "SkillTreeCrafting",
+      "type": "gui",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "0": 7
+      }
+    },
+    {
+      "name": "ComboSkillIfSelected",
+      "type": "procedure",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "int"
+          },
+          {
+            "name": "y",
+            "type": "int"
+          },
+          {
+            "name": "z",
+            "type": "int"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ComboSkill",
+      "type": "gui",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "0": 8
+      }
+    },
+    {
+      "name": "BackButtonPressedCombat",
+      "type": "procedure",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "int"
+          },
+          {
+            "name": "y",
+            "type": "int"
+          },
+          {
+            "name": "z",
+            "type": "int"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PurchaseButtonPressedCombo",
+      "type": "procedure",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Combo",
+      "type": "overlay",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
     }
   ],
-  "variable_elements": [],
+  "variable_elements": [
+    {
+      "name": "UnlockStatus",
+      "type": "string",
+      "scope": "global",
+      "value": ""
+    },
+    {
+      "name": "Combo",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    }
+  ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
@@ -183,9 +383,12 @@
       "item.ninjaarmorbody.name": "Ninja Coat",
       "entity.senseinpc.name": "Sensei NPC",
       "tile.lantern1.name": "Red lantern",
+      "advancements.ninjatraining3.descr": "Unlock the skill tree.",
       "advancements.ninjatraining2.descr": "Get a sword for the training",
       "item.ninjaarmorhelmet.name": "Ninja Mask",
       "advancements.ninjatraining2.title": "Ninja Training - 2nd assignment",
+      "advancements.ninjatraining3.title": "Ninja training - 3rd assignment",
+      "key.mcreator.skilltree": "Open SkillTree",
       "advancements.ninjatime.descr": "Get your ninja outfit.",
       "item.katana.name": "Katana",
       "item.ninjaarmorboots.name": "Ninja Boots",
