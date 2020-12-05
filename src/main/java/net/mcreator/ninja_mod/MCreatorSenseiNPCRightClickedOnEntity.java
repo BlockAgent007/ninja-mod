@@ -151,12 +151,12 @@ public class MCreatorSenseiNPCRightClickedOnEntity extends Elementsninja_mod.Mod
 					}
 				} else {
 					if (entity instanceof EntityPlayer)
-						((EntityPlayer) entity).addExperienceLevel((int) -5);
+						((EntityPlayer) entity).addExperienceLevel(-((int) 5));
 					if (entity instanceof EntityPlayer && !world.isRemote) {
 						((EntityPlayer) entity)
 								.sendStatusMessage(
 										new TextComponentString(
-												"[Sensei]: I just unlocked you your very own skill tree. Open it by pressing B. Now you may collect combat, agility, stealth and crafting xp to spend it on skills. Talk to me again for me to explain combat skills."),
+												"[Sensei]: I just unlocked you your very own skill tree. Open it by pressing B. Now you may collect combat, agility, stealth and crafting xp to spend it on skills. Talk to me again for me to explain each skill type.."),
 										(false));
 					}
 					if (entity instanceof EntityPlayerMP) {
@@ -173,6 +173,63 @@ public class MCreatorSenseiNPCRightClickedOnEntity extends Elementsninja_mod.Mod
 					}
 					entity.getEntityData().setDouble("timesTalked", 7);
 				}
+			}
+		} else if (((entity.getEntityData().getDouble("timesTalked")) == 7)) {
+			if (entity instanceof EntityPlayer && !world.isRemote) {
+				((EntityPlayer) entity).sendStatusMessage(new TextComponentString(
+						"[Sensei]: Combat skills include abilities related to fighting. They can be crucial for victory in an intense brawl."),
+						(false));
+			}
+			entity.getEntityData().setDouble("timesTalked", 8);
+		} else if (((entity.getEntityData().getDouble("timesTalked")) == 8)) {
+			if (entity instanceof EntityPlayer && !world.isRemote) {
+				((EntityPlayer) entity)
+						.sendStatusMessage(
+								new TextComponentString(
+										"[Sensei]: Agility skills consist of abilities that have to do with movement. They can be useful tools for traversal and parkour."),
+								(false));
+			}
+			entity.getEntityData().setDouble("timesTalked", 9);
+		} else if (((entity.getEntityData().getDouble("timesTalked")) == 9)) {
+			if (entity instanceof EntityPlayer && !world.isRemote) {
+				((EntityPlayer) entity)
+						.sendStatusMessage(
+								new TextComponentString(
+										"[Sensei]: Stealth skills are all about sneaking and hiding. They may also include anti-stealth tactics. great for staying undetected."),
+								(false));
+			}
+			entity.getEntityData().setDouble("timesTalked", 10);
+		} else if (((entity.getEntityData().getDouble("timesTalked")) == 10)) {
+			if (entity instanceof EntityPlayer && !world.isRemote) {
+				((EntityPlayer) entity).sendStatusMessage(new TextComponentString(
+						"[Sensei]: The crafting skill tree is the smallest one. It consists of crafting recipes for expert equipment."), (false));
+			}
+			entity.getEntityData().setDouble("timesTalked", 11);
+		} else if (((entity.getEntityData().getDouble("timesTalked")) == 11)) {
+			if (entity instanceof EntityPlayer && !world.isRemote) {
+				((EntityPlayer) entity)
+						.sendStatusMessage(
+								new TextComponentString(
+										"[Sensei]: In addition, certain skills require other skills to unlock. Though they require experience levels to unlock too."),
+								(false));
+			}
+			entity.getEntityData().setDouble("timesTalked", 12);
+		} else if (((entity.getEntityData().getDouble("timesTalked")) == 12)) {
+			if (entity instanceof EntityPlayer && !world.isRemote) {
+				((EntityPlayer) entity)
+						.sendStatusMessage(
+								new TextComponentString(
+										"[Sensei]: Combat, agility, stealth and crafting experience is what's required to unlock skills of the respective type. Unlike vanilla minecraft experience, these are not spent on skill purchase. Combat xp is obtained through killing, agility through running, stealth from sneaking and being invisible and finally crafting for crafting."),
+								(false));
+			}
+			entity.getEntityData().setDouble("timesTalked", 13);
+		} else if (((entity.getEntityData().getDouble("timesTalked")) == 13)) {
+			if ((false)) {
+				entity.getEntityData().setDouble("timesTalked", 14);
+			}
+		} else if (((entity.getEntityData().getDouble("timesTalked")) == 14)) {
+			if (entity instanceof EntityPlayer && !world.isRemote) {
+				((EntityPlayer) entity).sendStatusMessage(new TextComponentString("[Sensei]: I can teach you no more."), (false));
 			}
 		}
 		if ((((entity instanceof EntityPlayerMP) && (entity.world instanceof WorldServer)) ? ((EntityPlayerMP) entity).getAdvancements()

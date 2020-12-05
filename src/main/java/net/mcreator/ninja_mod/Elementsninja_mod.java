@@ -124,8 +124,8 @@ public class Elementsninja_mod implements IFuelHandler, IWorldGenerator {
 				return new MCreatorSkillTreeStealth.GuiContainerMod(world, x, y, z, player);
 			if (id == MCreatorSkillTreeCrafting.GUIID)
 				return new MCreatorSkillTreeCrafting.GuiContainerMod(world, x, y, z, player);
-			if (id == MCreatorComboSkill.GUIID)
-				return new MCreatorComboSkill.GuiContainerMod(world, x, y, z, player);
+			if (id == MCreatorSharperKatanaSkill.GUIID)
+				return new MCreatorSharperKatanaSkill.GuiContainerMod(world, x, y, z, player);
 			return null;
 		}
 
@@ -139,8 +139,8 @@ public class Elementsninja_mod implements IFuelHandler, IWorldGenerator {
 				return new MCreatorSkillTreeStealth.GuiWindow(world, x, y, z, player);
 			if (id == MCreatorSkillTreeCrafting.GUIID)
 				return new MCreatorSkillTreeCrafting.GuiWindow(world, x, y, z, player);
-			if (id == MCreatorComboSkill.GUIID)
-				return new MCreatorComboSkill.GuiWindow(world, x, y, z, player);
+			if (id == MCreatorSharperKatanaSkill.GUIID)
+				return new MCreatorSharperKatanaSkill.GuiWindow(world, x, y, z, player);
 			return null;
 		}
 	}

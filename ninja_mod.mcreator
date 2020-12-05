@@ -1,6 +1,6 @@
 {
   "id_map": {
-    "GUI": 8,
+    "GUI": 9,
     "ENTITY": 2
   },
   "mod_elements": [
@@ -262,48 +262,6 @@
       }
     },
     {
-      "name": "ComboSkillIfSelected",
-      "type": "procedure",
-      "sortid": 24,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "int"
-          },
-          {
-            "name": "y",
-            "type": "int"
-          },
-          {
-            "name": "z",
-            "type": "int"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "ComboSkill",
-      "type": "gui",
-      "sortid": 25,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {
-        "0": 8
-      }
-    },
-    {
       "name": "BackButtonPressedCombat",
       "type": "procedure",
       "sortid": 26,
@@ -336,9 +294,19 @@
       }
     },
     {
-      "name": "PurchaseButtonPressedCombo",
+      "name": "SharperKatanaSkill",
+      "type": "gui",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "0": 9
+      }
+    },
+    {
+      "name": "PurchaseButtonPressedSharperKatana",
       "type": "procedure",
-      "sortid": 27,
+      "sortid": 29,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -352,9 +320,381 @@
       }
     },
     {
-      "name": "Combo",
-      "type": "overlay",
-      "sortid": 28,
+      "name": "SharperKatanaSkillIfSelected",
+      "type": "procedure",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "int"
+          },
+          {
+            "name": "y",
+            "type": "int"
+          },
+          {
+            "name": "z",
+            "type": "int"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SenseiNPCAntiError",
+      "type": "procedure",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SharperKatana",
+      "type": "procedure",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SkillTreeAgilityPressed",
+      "type": "procedure",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "int"
+          },
+          {
+            "name": "y",
+            "type": "int"
+          },
+          {
+            "name": "z",
+            "type": "int"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SkillSummaryOnKeyPressed",
+      "type": "procedure",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SkillSummary",
+      "type": "keybind",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "SkillTreeCombatPressed",
+      "type": "procedure",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "int"
+          },
+          {
+            "name": "y",
+            "type": "int"
+          },
+          {
+            "name": "z",
+            "type": "int"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SkillTreeStealthPressed",
+      "type": "procedure",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "int"
+          },
+          {
+            "name": "y",
+            "type": "int"
+          },
+          {
+            "name": "z",
+            "type": "int"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SkillTreeCraftingPressed",
+      "type": "procedure",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "int"
+          },
+          {
+            "name": "y",
+            "type": "int"
+          },
+          {
+            "name": "z",
+            "type": "int"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CombatLevelIncrease",
+      "type": "procedure",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AgilityLevelIncrease",
+      "type": "procedure",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "StealthLevelIncrease",
+      "type": "procedure",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CraftingLevelIncrease",
+      "type": "procedure",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LevelSystem",
+      "type": "procedure",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CombatLevelRefresh",
+      "type": "procedure",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CraftingLevelRefresh",
+      "type": "procedure",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DevOnKeyPressed",
+      "type": "procedure",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dev",
+      "type": "keybind",
+      "sortid": 45,
       "compiles": true,
       "locked_code": false,
       "ids": {}
@@ -368,7 +708,73 @@
       "value": ""
     },
     {
-      "name": "Combo",
+      "name": "CombatLevel",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "AgilityLevel",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "StealthLevel",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "CraftingLevel",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "CombatProgress",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "AgilityProgress",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "StealthProgress",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "CraftingProgress",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "CombatMax",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "AgilityMax",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "StealthMax",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "CraftingMax",
       "type": "number",
       "scope": "map",
       "value": "0"
@@ -385,12 +791,14 @@
       "tile.lantern1.name": "Red lantern",
       "advancements.ninjatraining3.descr": "Unlock the skill tree.",
       "advancements.ninjatraining2.descr": "Get a sword for the training",
+      "key.mcreator.dev": "Dev",
       "item.ninjaarmorhelmet.name": "Ninja Mask",
       "advancements.ninjatraining2.title": "Ninja Training - 2nd assignment",
       "advancements.ninjatraining3.title": "Ninja training - 3rd assignment",
       "key.mcreator.skilltree": "Open SkillTree",
       "advancements.ninjatime.descr": "Get your ninja outfit.",
       "item.katana.name": "Katana",
+      "key.mcreator.skillsummary": "Show Skill Summary",
       "item.ninjaarmorboots.name": "Ninja Boots",
       "advancements.ninjaquest.descr": "A quest to become a ninja.",
       "item.ninjaarmorlegs.name": "Ninja Leggings"

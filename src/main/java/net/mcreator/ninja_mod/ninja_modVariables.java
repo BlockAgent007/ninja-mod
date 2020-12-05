@@ -16,7 +16,18 @@ public class ninja_modVariables {
 
 	public static class MapVariables extends WorldSavedData {
 		public static final String DATA_NAME = "ninja_mod_mapvars";
-		public double Combo = 0;
+		public double CombatLevel = 0;
+		public double AgilityLevel = 0;
+		public double StealthLevel = 0;
+		public double CraftingLevel = 0;
+		public double CombatProgress = 0;
+		public double AgilityProgress = 0;
+		public double StealthProgress = 0;
+		public double CraftingProgress = 0;
+		public double CombatMax = 0;
+		public double AgilityMax = 0;
+		public double StealthMax = 0;
+		public double CraftingMax = 0;
 
 		public MapVariables() {
 			super(DATA_NAME);
@@ -28,12 +39,34 @@ public class ninja_modVariables {
 
 		@Override
 		public void readFromNBT(NBTTagCompound nbt) {
-			Combo = nbt.getDouble("Combo");
+			CombatLevel = nbt.getDouble("CombatLevel");
+			AgilityLevel = nbt.getDouble("AgilityLevel");
+			StealthLevel = nbt.getDouble("StealthLevel");
+			CraftingLevel = nbt.getDouble("CraftingLevel");
+			CombatProgress = nbt.getDouble("CombatProgress");
+			AgilityProgress = nbt.getDouble("AgilityProgress");
+			StealthProgress = nbt.getDouble("StealthProgress");
+			CraftingProgress = nbt.getDouble("CraftingProgress");
+			CombatMax = nbt.getDouble("CombatMax");
+			AgilityMax = nbt.getDouble("AgilityMax");
+			StealthMax = nbt.getDouble("StealthMax");
+			CraftingMax = nbt.getDouble("CraftingMax");
 		}
 
 		@Override
 		public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
-			nbt.setDouble("Combo", Combo);
+			nbt.setDouble("CombatLevel", CombatLevel);
+			nbt.setDouble("AgilityLevel", AgilityLevel);
+			nbt.setDouble("StealthLevel", StealthLevel);
+			nbt.setDouble("CraftingLevel", CraftingLevel);
+			nbt.setDouble("CombatProgress", CombatProgress);
+			nbt.setDouble("AgilityProgress", AgilityProgress);
+			nbt.setDouble("StealthProgress", StealthProgress);
+			nbt.setDouble("CraftingProgress", CraftingProgress);
+			nbt.setDouble("CombatMax", CombatMax);
+			nbt.setDouble("AgilityMax", AgilityMax);
+			nbt.setDouble("StealthMax", StealthMax);
+			nbt.setDouble("CraftingMax", CraftingMax);
 			return nbt;
 		}
 
